@@ -258,3 +258,20 @@ filterButtons.forEach(btn => {
   });
 });
 
+/* skills */
+/* Skill Progress Animation */
+const skillFills = document.querySelectorAll(".progress-fill");
+
+const skillObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const fill = entry.target;
+      const target = fill.getAttribute("data-progress");
+      fill.style.width = target + "%";
+      skillObserver.unobserve(fill);
+    }
+  });
+}, { threshold: 0.5 });
+
+skillFills.forEach(fill => skillObserver.observe(fill));
+
