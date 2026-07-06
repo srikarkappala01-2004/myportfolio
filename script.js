@@ -39,48 +39,52 @@ document.addEventListener("DOMContentLoaded", () => {
      Typing Effect
   ------------------------- */
   const typingElement = document.getElementById("typing");
-  const roles = ["Web Developer", "Python Developer", "Data Analyst"];
-  let roleIndex = 0;
-  let charIndex = 0;
+  if (typingElement) {
+    const roles = ["Web Developer", "Python Developer", "Data Analyst"];
+    let roleIndex = 0;
+    let charIndex = 0;
 
-  function typeRole() {
-    if (charIndex < roles[roleIndex].length) {
-      typingElement.textContent += roles[roleIndex].charAt(charIndex);
-      charIndex++;
-      setTimeout(typeRole, 100);
-    } else {
-      setTimeout(eraseRole, 2000);
+    function typeRole() {
+      if (charIndex < roles[roleIndex].length) {
+        typingElement.textContent += roles[roleIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(typeRole, 100);
+      } else {
+        setTimeout(eraseRole, 2000);
+      }
     }
-  }
 
-  function eraseRole() {
-    if (charIndex > 0) {
-      typingElement.textContent = roles[roleIndex].substring(0, charIndex - 1);
-      charIndex--;
-      setTimeout(eraseRole, 50);
-    } else {
-      roleIndex = (roleIndex + 1) % roles.length;
-      setTimeout(typeRole, 500);
+    function eraseRole() {
+      if (charIndex > 0) {
+        typingElement.textContent = roles[roleIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(eraseRole, 50);
+      } else {
+        roleIndex = (roleIndex + 1) % roles.length;
+        setTimeout(typeRole, 500);
+      }
     }
-  }
 
-  typeRole();
+    typeRole();
+  }
 
   /* -------------------------
      Back-to-top Button
   ------------------------- */
   const backToTop = document.getElementById("back-to-top");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      backToTop.style.display = "block";
-    } else {
-      backToTop.style.display = "none";
-    }
-  });
+  if (backToTop) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        backToTop.style.display = "block";
+      } else {
+        backToTop.style.display = "none";
+      }
+    });
 
-  backToTop.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
 
   /* -------------------------
      Smooth Scroll for Nav Links
@@ -230,3 +234,27 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+/* Certificate Filter */
+const filterButtons = document.querySelectorAll(".filter-btn");
+const certCards = document.querySelectorAll(".cert-card");
+
+filterButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const category = btn.dataset.filter;
+
+    certCards.forEach(card => {
+      if (category === "all" || card.dataset.category === category) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+    // Active button styling
+    filterButtons.forEach(b => b.classList.remove("btn-primary"));
+    filterButtons.forEach(b => b.classList.add("btn-outline-primary"));
+    btn.classList.remove("btn-outline-primary");
+    btn.classList.add("btn-primary");
+  });
+});
+
