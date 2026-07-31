@@ -678,4 +678,59 @@ footer a:hover {
   color: var(--secondary-color);
 }
 
+:root {
+  --primary-color: #4facfe;        /* define your accent color */
+  --card-background: rgba(255,255,255,0.05); /* subtle glass effect */
+  --text-color: #fff;              /* default text color */
+  --background-color: #0a0a0a;     /* page background */
+}
+
+/* Skill card base */
+.skill-card {
+  text-align: center;
+  background: var(--card-background);
+  border: 2px solid rgba(0, 191, 255, 0.2);
+  border-radius: 25px;
+  padding: 40px 30px;
+  transition: transform 0.35s, border-color 0.35s, box-shadow 0.35s, background-color 0.35s;
+}
+
+/* Icon */
+.skill-card i {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 25px;
+  transition: transform 0.35s;
+}
+
+/* Heading */
+.skill-card h2 {
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+  color: var(--text-color); /* ensures visibility */
+}
+
+.subskills {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.subskill-btn {
+  display: inline-block;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.subskill-btn:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #00f2fe, #4facfe);
+}
 
