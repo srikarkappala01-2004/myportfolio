@@ -642,17 +642,29 @@ footer a:hover {
 }
 
 .skill-item {
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
+  /* A solid surface keeps every skill group visibly card-shaped. */
+  background: #282828;
+  border: 1px solid #4d4d4d;
   border-radius: 12px;
   padding: 20px;
   text-align: center;
-  backdrop-filter: blur(10px);
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .skill-item:hover {
   transform: translateY(-5px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.3);
+}
+
+/* Preserve the same card design when the theme changes. */
+body.light-mode .skill-item {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  box-shadow: 0 6px 18px rgba(31, 55, 78, 0.12);
+}
+
+body.light-mode .skill-item:hover {
+  box-shadow: 0 12px 26px rgba(31, 55, 78, 0.18);
 }
 
 /* Progress Bar */

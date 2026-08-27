@@ -214,24 +214,26 @@ document.addEventListener("DOMContentLoaded", () => {
      Contact Form Validation
   ------------------------- */
   const contactForm = document.getElementById("contact-form");
-  contactForm.addEventListener("submit", e => {
-    e.preventDefault();
-    const name = contactForm.name.value.trim();
-    const email = contactForm.email.value.trim();
-    const message = contactForm.message.value.trim();
+  if (contactForm) {
+    contactForm.addEventListener("submit", e => {
+      e.preventDefault();
+      const name = contactForm.name.value.trim();
+      const email = contactForm.email.value.trim();
+      const message = contactForm.message.value.trim();
 
-    if (!name || !email || !message) {
-      showToast("Please fill in all required fields.", "error");
-      return;
-    }
-    if (!/\S+@\S+\.\S+/.test(email)) {
-      showToast("Please enter a valid email.", "error");
-      return;
-    }
+      if (!name || !email || !message) {
+        showToast("Please fill in all required fields.", "error");
+        return;
+      }
+      if (!/\S+@\S+\.\S+/.test(email)) {
+        showToast("Please enter a valid email.", "error");
+        return;
+      }
 
-    showToast("Message sent successfully!", "success");
-    contactForm.reset();
-  });
+      showToast("Message sent successfully!", "success");
+      contactForm.reset();
+    });
+  }
 
 });
 /* Certificate Filter */
