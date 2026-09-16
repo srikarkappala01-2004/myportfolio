@@ -14,6 +14,9 @@
   
   <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Bootstrap 5 (Optional) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -30,7 +33,7 @@
   <header>
     <nav class="navbar navbar-expand-lg sticky-top">
       <div class="container position-relative">
-        <a class="navbar-brand" href="images/professional pic.jpeg" target="_blank" rel="noopener noreferrer">𝒮𝓇𝒾𝓀𝒶𝓇 𝒦𝒶𝓅𝓅𝒶𝓁𝒶</a>
+        <a class="navbar-brand"  target="_blank" rel="noopener noreferrer"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -57,23 +60,27 @@
   
   <!-- Hero Section -->
   <section id="home" class="hero">
-    <div class="container">
-      <a href="https://www.linkedin.com/in/srikar-kappala/" target="_blank" rel="noopener noreferrer">
-        <img src="images/professional pic.jpeg" alt="Srikar Kappala profile" class="profile-img">
-      </a>
+    <div class="container hero-layout">
       <div class="hero-content">
-        <h1>I'm Srikar Kappala</h1>
-        <h2><span id=" ">Python Developer</span></h2>
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1>Srikar<br>Kappala</h1>
+        <h2>Python Developer<br>&amp; Data Science Student</h2>
+        <p class="hero-description">Focused on building efficient, maintainable, and user-friendly applications that turn complex ideas into practical solutions.</p>
         <div class="cta-buttons">
-          <a href="c:\Users\Srika\OneDrive\Documents\srikar resume.pdf" class="btn btn-secondary" download>Download Resume</a>
-          <a href="#contact" class="btn btn-outline-light">Contact Me</a>
+          <a href="c:\Users\Srika\OneDrive\Documents\srikar resume.pdf" class="btn btn-primary" download><i class="fas fa-arrow-right"></i> Download Resume</a>
+          <a href="#contact" class="btn btn-resume"><i class="fas fa-envelope"></i> Contact Me</a>
         </div>
-        <!-- Social Icons -->
-        <div class="social-icons">
-          <a href="https://github.com/srikarkappala01-2004"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/srikar-kappala/"><i class="fab fa-linkedin"></i></a>
-          <a href="https://x.com/KappalaSri24087"><i class="fab fa-twitter"></i></a>
-        </div>
+      </div>
+      <div class="hero-portrait" aria-label="Portrait of Srikar Kappala">
+        <span class="portrait-dots" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        </span><span class="portrait-orb" aria-hidden="true"></span>
+        <a href="images/professional pic.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/professional pic.jpeg" alt="Srikar Kappala profile"></a>
+      </div>
+      <div class="social-icons" aria-label="Social links">
+        <a href="https://www.linkedin.com/in/srikar-kappala/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/srikarkappala01-2004" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:srikarkappala01@gmail.com" aria-label="Email Srikar"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
   </section>
